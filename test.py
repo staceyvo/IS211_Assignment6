@@ -65,5 +65,9 @@ class TestConvert(unittest.TestCase):
         self.assertRaises(ConversionNotPossible, convert('celsius', 'meters', 834))
         self.assertRaises(ConversionNotPossible, convert('kelvin', 'meters', 369))
 
+    def test_convert_miles_and_yards(self):
+        self.assertTrue(15 == convert('miles', 'yards', 65))
+        self.assertTrue(15 == convert('yards', 'miles', 65))
+
 if __name__ == '__main__':
     unittest.main()
