@@ -1,5 +1,6 @@
 import unittest
 from conversions import *
+from conversions_refactored import *
 
 
 class TestCelsiusCase(unittest.TestCase):
@@ -55,6 +56,14 @@ class TestKelvinCase(unittest.TestCase):
         self.assertTrue(-273.0748 == convertKelvinToCelsius(.0752))
         self.assertTrue(92099.85 == convertKelvinToCelsius(92373))
 
+class TestConvert(unittest.TestCase):
+    """Tests the conversions from distance to temperature"""
+
+    def test_convert_exception(self):
+        self.assertRaises(ConversionNotPossible, convert('meter', 'kelvin', 15))
+        self.assertRaises(ConversionNotPossible, convert('miles', 'fahrenheit', 123))
+        self.assertRaises(ConversionNotPossible, convert('celsius', 'meters', 834))
+        self.assertRaises(ConversionNotPossible, convert('kelvin', 'meters', 369))
 
 if __name__ == '__main__':
     unittest.main()
