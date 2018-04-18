@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Refactoring a module"""
+
+
 import unittest
 
 
@@ -18,87 +23,87 @@ def convert(fromUnit, toUnit, value):
     #perform correct conversion
     if fromUnit == 'kelvin':
         if toUnit == 'kelvin':
-            return value
+            return float(value)
         if toUnit == 'fahrenheit':
-            return (value * 9.0/5) - 459.67
+            return float((value * 9.0/5) - 459.67)
         #convert kelvin to celsius
-        return value - 273.15
+        return float(value - 273.15)
 
     if fromUnit == 'fahrenheit':
         if toUnit == 'fahrenheit':
-            return value
+            return float(value)
         if toUnit == 'kelvin':
-            return (value + 459.67) * 5 / 9
+            return float((value + 459.67) * 5 / 9)
         #convert fahrenheit to celsius
-        return (value - 32) * 5.0/9
+        return float((value - 32) * 5.0/9)
 
     if fromUnit == 'celsius':
         if toUnit == 'celsius':
-            return value
+            return float(value)
         if toUnit == 'fahrenheit':
-            return (value * 1.8) + 32
+            return float((value * 1.8) + 32)
         #convert celsius to kelvin
-        return value + 273.15
+        return float(value + 273.15)
 
     if fromUnit == 'meters':
         if toUnit == 'meters':
-            return value
+            return float(value)
         if toUnit == 'miles':
-            return value / 1609.344
+            return float(value / 1609.344)
         if toUnit == 'feet':
-            return value * 3.28
+            return float(value * 3.28)
         if toUnit == 'yards':
-            return value / 0.9144
+            return float(value / 0.9144)
         #convert meters to inches
-        return
+        return float(value * 39.37007874)
 
     if fromUnit == 'miles':
         if toUnit == 'meters':
-            return value * 1609.344
+            return float(value * 1609.344)
         if toUnit == 'miles':
-            return value
+            return float(value)
         if toUnit == 'feet':
-            return value * 5280
+            return float(value * 5280)
         if toUnit == 'yards':
-            return value * 1760
+            return float(value * 1760)
         #convert miles to inches
-        return value * 63360
+        return float(value * 63360)
 
     if fromUnit == 'feet':
         if toUnit == 'meters':
-            return value / 3.28
+            return float(value / 3.28)
         if toUnit == 'miles':
-            return value * 0.00018939
+            return float(value * 0.00018939)
         if toUnit == 'feet':
-            return value
+            return float(value)
         if toUnit == 'yards':
-            return value * 0.333333333333
+            return float(value * 0.333333333333)
         #convert feet to inches
-        return value * 12
+        return float(value * 12)
 
     if fromUnit == 'yards':
         if toUnit == 'meters':
-            return value / 0.9144
+            return float(value / 0.9144)
         if toUnit == 'miles':
-            return value * 0.000568
+            return float(value * 1.0/1760)
         if toUnit == 'feet':
-            return value * 3
+            return float(value * 3)
         if toUnit == 'yards':
-            return value
+            return float(value)
         #convert yards to inches
-        return
+        return float(value * 36)
 
     if fromUnit == 'inches':
         if toUnit == 'meters':
-            return value * 0.0254
+            return float(value * 0.0254)
         if toUnit == 'miles':
-            return value * 0.0000157828283
+            return float(value * 0.0000157828283)
         if toUnit == 'feet':
-            return value * 12
+            return float(value * 12)
         if toUnit == 'yards':
-            return value * 0.027778
+            return float(value * 0.027778)
         #convert inches to inches
-        return value
+        return float(value)
 
 
 

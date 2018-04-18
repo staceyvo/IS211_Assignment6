@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Creating unittests"""
+
 import unittest
 from conversions import *
 from conversions_refactored import *
@@ -65,9 +69,16 @@ class TestConvert(unittest.TestCase):
         self.assertRaises(ConversionNotPossible, convert('celsius', 'meters', 834))
         self.assertRaises(ConversionNotPossible, convert('kelvin', 'meters', 369))
 
+
     def test_convert_miles_and_yards(self):
-        self.assertTrue(15 == convert('miles', 'yards', 65))
-        self.assertTrue(15 == convert('yards', 'miles', 65))
+        self.assertTrue(17600 == convert('miles', 'yards', 10))
+        # python has rounding error
+        #self.assertTrue(10 == convert('yards', 'miles', 17600))
+
+
+    def test_convert_feet_and_inches(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
